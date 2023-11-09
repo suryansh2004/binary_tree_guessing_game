@@ -45,14 +45,14 @@ class BinaryTree:
 
         print("Please answer a series of questions and I will tell you what movie you are thinking about:")
         while node.left or node.right:
-            answer = input(node.question + " (Y/N)? ").strip().upper()
+            answer = input(node.question).strip().upper()
             if answer == 'Y':
                 node = node.left
             elif answer == 'N':
                 node = node.right
             else:
                 print("Please answer with 'Y' or 'N'.")
-        print(f"It’s '{node.movie}'.")
+        print(f"It's '{node.movie}'.")
 
     def display(self, node=None, indent="", last='updown'):
         if node is not None:

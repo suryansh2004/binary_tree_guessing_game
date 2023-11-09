@@ -1,7 +1,31 @@
 200 Is it animated? (Y/N)
-180 Are fishes involved? (Y/N)
-160 It's "Finding Nemo"
-190 It's "Lion King"
+180 Is it animated superhero movie? (Y/N)
+160 Does it involve humans? (Y/N)
+158 Is it a marvel movie? (Y/N)
+157 It's "Spider-Man Multiverse"
+159 It's "Justice League Dark"
+162 Does it involve ghosts? (Y/N)
+161 It's "Monster House"
+163 It's "Diary of a Wimpy kid"
+190 Is it animated animal movie? (Y/N)
+188 Does it involve fishes? (Y/N)
+187 It's "Finding Nemo"
+189 It's "Lion King"
+192 Does it involve cars? (Y/N)
+191 It's "Cars"
+193 It's "Toy Story"
 220 Is it romantic? (Y/N)
-230 It's "Titanic"
-210 It's "Harry Potter"
+210 Is it rom-com? (Y/N)
+208 Is it based on festive season?(Y/N)
+207 It's "Falling for Christmas"
+209 It's "Freinds With Benefit"
+212 Is it based on wars? (Y/N)
+211 It's "Brothers"
+213 It's "The Change-Up"
+230 Is it horror movie? (Y/N)
+228 Is it based on real life?(Y/N)
+227 It's "Conjuring"
+229 It's "Consecration"
+232 Is it mysterious movie?(Y/N)
+231 It's "Zodiac"
+233 It's "Interstellar"
