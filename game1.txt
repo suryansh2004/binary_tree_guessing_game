@@ -1,0 +1,7 @@
+200 Is it animated? (Y/N)
+180 Are fishes involved? (Y/N)
+160 It's "Finding Nemo"
+190 It's "Lion King"
+220 Is it romantic? (Y/N)
+230 It's "Titanic"
+210 It's "Harry Potter"
