@@ -18,7 +18,7 @@
 210 Is it rom-com? (Y/N)
 208 Is it based on festive season?(Y/N)
 207 It's "Falling for Christmas"
-209 It's "Freinds With Benefit"
+209 It's "Friends With Benefit"
 212 Is it based on wars? (Y/N)
 211 It's "Brothers"
 213 It's "The Change-Up"
