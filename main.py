@@ -1,7 +1,8 @@
 import os
 
 class Node:
-    def __init__(self, question, movie=None):
+    def __init__(self, address, question, movie=None):
+        self.address = address
         self.question = question
         self.movie = movie
         self.left = None
@@ -28,22 +29,40 @@ class BinaryTree:
         if rest.startswith("It's "):
             # It's a movie node
             movie = rest.replace("It's ", "")
-            return Node(None, movie)
+            return Node(address, None, movie)
 
         question = rest
         left_child = self.build_tree_recursive(lines)
         right_child = self.build_tree_recursive(lines)
-        node = Node(question)
+        node = Node(address, question)
         node.left = left_child
         node.right = right_child
 
         return node
 
+    def inorder_traversal(self, node=None):
+        if node is not None:
+            self.inorder_traversal(node.left)
+            print(f"Address: {node.address} - {node.question if node.question else f'Movie: {node.movie}'}")
+            self.inorder_traversal(node.right)
+
+    def preorder_traversal(self, node=None):
+        if node is not None:
+            print(f"Address: {node.address} - {node.question if node.question else f'Movie: {node.movie}'}")
+            self.preorder_traversal(node.left)
+            self.preorder_traversal(node.right)
+
+    def postorder_traversal(self, node=None):
+        if node is not None:
+            self.postorder_traversal(node.left)
+            self.postorder_traversal(node.right)
+            print(f"Address: {node.address} - {node.question if node.question else f'Movie: {node.movie}'}")
+
     def play_game(self, node=None):
         if node is None:
             node = self.root
 
-        print("Please answer a series of questions and I will tell you what movie you are thinking about:")
+        print("Please answer a series of questions, and I will tell you what movie you are thinking about:")
         while node.left or node.right:
             answer = input(node.question).strip().upper()
             if answer == 'Y':
@@ -74,6 +93,9 @@ def print_help():
     print("P Play the game")
     print("L Load another game file")
     print("D Display the binary tree")
+    print("I Inorder Traversal")
+    print("N Preorder Traversal")
+    print("O Postorder Traversal")
     print("H Help information")
     print("X Exit the program")
 
@@ -92,11 +114,20 @@ if __name__ == "__main__":
             file_list = [f for f in os.listdir('.') if f.endswith('game.txt')]
             for fIndex in range(len(file_list)):
                 print(f"{fIndex+1}: {file_list[fIndex]}")
-            fileIndex = input("Enter the game file to load: ").strip()
-            tree.build_tree(file_list[fIndex-1])
+            fileIndex = int(input("Enter the game file index to load: ").strip())
+            tree.build_tree(file_list[fileIndex-1])
             print("Game file loaded successfully.")
         elif choice == 'D':
             tree.display(tree.root)
+        elif choice == 'I':
+            print("Inorder Traversal:")
+            tree.inorder_traversal(tree.root)
+        elif choice == 'N':
+            print("Preorder Traversal:")
+            tree.preorder_traversal(tree.root)
+        elif choice == 'O':
+            print("Postorder Traversal:")
+            tree.postorder_traversal(tree.root)
         elif choice == 'H':
             print_help()
         elif choice == 'X':
